@@ -51,7 +51,25 @@
 												developed with vs-code and jdk-17.0.2+8<br>
 												get it over @Github<a href="https://github.com/FelSecure/num_Guesser" class="icon brands fa-github"></a><br>
 											</p> 
-											<a href="#" class="image fit"><img src="images/guessser_main_loop.png" alt="main loop code snapshot"></a>
+											<code>
+												// main program loop
+												do {
+													int i = scan.nextInt(); // scan user input via scanner object (int)
+													// if-else block to compare random number and user input
+													if (i == compare) {
+														log.finest("Du hast die richtige Nummer erraten !");
+														b = true;
+													} else if (i < lower) {
+														throw new IllegalArgumentException(" Deine Eingabe liegt unter dem zugelassenen Bereich !");
+													} else if (i >= upper) {
+														throw new IllegalArgumentException(" Deine Eingabe liegt über dem zugelassenen Bereich !");
+													} else if (i < compare) {
+														log.warning("Deine Nummer ist zu klein !");
+													} else {
+														log.warning("Deine Nummer ist zu groß !");
+													}
+												} while (!b);
+											</code>
 								
 										</div>							
 									</div>
